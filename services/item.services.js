@@ -1,8 +1,12 @@
-const baseURL = 'exp://192.168.1.105:3001/';
+const baseURL = 'exp://192.168.1.105:3001/items';
 
 const fetchItems = async () => {
-  const res = await fetch(baseURL);
-  return await res.json();
+  try{
+    const res = await fetch(baseURL);
+    return await res.json();
+  } catch (err) {
+    console.log(error)
+  }
 }
 
-module.exports = fetchItems ;
+export default fetchItems ;

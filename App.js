@@ -1,35 +1,48 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useEffect } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, FlatList } from 'react-native';
 import HeaderComponent from './Components/header.component';
+import { useState } from 'react';
+import fetchItems  from './services/item.services';
 import Calendar from './Components/calendar.component';
-// import { useState } from 'react';
-// import { fetchItems } from './services/item.services';
 
-const months = [ 'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
 
+const months = [
+  {key: 'JAN'},
+  {key: 'FEB'},
+  {key: 'MAR'},
+  {key: 'APR'},
+  {key: 'MAY'},
+  {key: 'JUN'},
+  {key: 'JUL'},
+  {key: 'AUG'},
+  {key: 'SEP'},
+  {key: 'OCT'},
+  {key: 'NOV'},
+  {key: 'DEC'}
+];
 export default function App() {
 
-  // const [item, setItem] = useState([]);
+  const [item, setItem] = useState([]);
 
-  // useEffect(() => {
-  //   getItems();
-  // }, []);
+  useEffect(() => {
+    getItems();
+  }, []);
 
-  // const getItems = async () => {
-  //   const items = await fetchItems();
-  //   setItem(items);
-  // }
-
+  const getItems = async () => {
+    const items = await fetchItems();
+    setItem(items);
+  }
+  
   return (
    <SafeAreaView>
     <View>
       <HeaderComponent></HeaderComponent>
+     <Text >  </Text>
       <FlatList
-        style={styles.content}
-        data = {months}
-        keyExtractor={item => item}
-        render={({ item }) => <Calendar name={item}/>}>
+        data= {months}
+        keyExtractor = {month => {month.key}}
+        renderItem = {({key}) => 
+          <Calendar name = {key} />} >
       </FlatList>
     </View>
    </SafeAreaView>

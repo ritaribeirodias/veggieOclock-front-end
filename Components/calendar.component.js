@@ -1,15 +1,15 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
-import { withSafeAreaInsets } from 'react-native-safe-area-context';
+import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
 
-const Calendar = () => {
+
+const Calendar = ({name}) => {
   
   return (
-      <View>
-      <View style = {styles.calendarContainer}>
-          <Text style = {styles.text}>JAN</Text>
+      
+      <View style={styles.calendarContainer}>
+          <Text style={styles.text}>{name}</Text>
       </View>
-      </View>
+      
   );
 
 }
@@ -33,5 +33,6 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',
   }
-})
+});
+
 export default Calendar;
