@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 
 const Calendar = ({name}) => {
@@ -16,12 +16,13 @@ const Calendar = ({name}) => {
 const styles = StyleSheet.create({
   calendarContainer: {
     backgroundColor:'#BEF388',
-    width:30,
+    width:40,
     height: 30, 
-    borderRadius:10,
+    borderRadius:5,
     color: 'white',
     flexDirection: 'row',
     alignItems: 'center',
+    margin: 1,
   },
   text: {
     color: 'white',
