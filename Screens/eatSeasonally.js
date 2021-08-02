@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     backgroundColor: '#E3F8CF',
     borderRadius: 7,
+    padding: 5, 
 
   },
   title: {

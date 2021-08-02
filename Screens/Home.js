@@ -18,6 +18,13 @@ const Home = ({ navigation }) => {
       </View>
       <View style={styles.homepageMenu}>
       <TouchableOpacity onPress={() => {
+          navigation.navigate('Details')
+      }}>
+        <Text style={styles.text}>Details</Text>
+      </TouchableOpacity>
+      </View>
+      <View style={styles.homepageMenu}>
+      <TouchableOpacity onPress={() => {
           navigation.navigate('FruitVeggieMonth')
       }}>
         <Text style={styles.text}>Products of the Month</Text>

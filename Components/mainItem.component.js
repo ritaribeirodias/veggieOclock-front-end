@@ -2,9 +2,10 @@ import React from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 
 const MainItem = (props) => {
+
     return (
      <View style={styles.mainItemComponent}>
-       <Image source = {require('../pics/cherry.jpeg')} style={styles.image} />
+       
      </View>
     )
 }
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
     
   },
   image: {
-    
+    backgroundColor: 'pink',
     width:160,
     height: 160, 
     borderRadius:10,

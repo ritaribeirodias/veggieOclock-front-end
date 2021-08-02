@@ -40,31 +40,25 @@ const CalendarScreen = (props) => {
     fetchItems();
   }, []);
 
+  
+
    
 
   return (
     <SafeAreaView>
     <View> 
       <HeaderComponent></HeaderComponent>
+      <View style = {styles.list}>
       <FlatList
         data= {data}
-        horizontal = {true}
+        horizontal = {false}
         keyExtractor = {item => {item._id}}
         renderItem = {({item}) => {
-          return <Item images = {item.image} />
-        }}>
-      </FlatList>
-      <FlatList
-        style = {styles.margin}
-        horizontal = {false}
-        numColumns = {6}
-        data= {months}
-        //keyExtractor = {el => {el.month}}
-        renderItem = {(item) => {
-          return <Calendar name = {item.item.month} />
+          return <Item item = {item} />
         }}>
       </FlatList>
       <MainItem style = {styles.mainItem}></MainItem>
+      </View>
     </View>
     </SafeAreaView>
   )
@@ -83,6 +77,9 @@ const styles = StyleSheet.create({
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+    }, 
+    list: {
+      alignItems: 'center', 
     }
   });
 
