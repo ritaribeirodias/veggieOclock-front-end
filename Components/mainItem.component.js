@@ -10,20 +10,20 @@ const MainItem = (props) => {
 }
 const styles = StyleSheet.create({
   mainItemComponent: {
-    width:150,
-    height: 190, 
+    width:160,
+    height: 160, 
     justifyContent: 'center',
     alignItems: 'center',
     
   },
   image: {
-    flex: 1,
-    width: 150,
-    height: 200,
-    resizeMode: 'contain',
-    justifyContent: 'center',
+    
+    width:160,
+    height: 160, 
+    borderRadius:10,
+    flexDirection: 'row',
     alignItems: 'center',
-    borderRadius: 15,
+    margin: 1,
     marginLeft: 270,
   }
 });

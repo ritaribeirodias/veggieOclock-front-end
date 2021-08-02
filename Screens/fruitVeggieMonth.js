@@ -6,6 +6,7 @@ const FruitVeggieMonth = () => {
   return (
     <View>
         <HeaderComponent></HeaderComponent>
+        
     </View>
   )
 }

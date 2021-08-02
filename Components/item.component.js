@@ -1,26 +1,25 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-const Item = ({image}) => {
-  return (
-      
+const Item = ({images}) => {
+ 
+  return ( 
     <View style={styles.item}> 
-    <Image source = {image} />
+     <Image source={{uri: images}} style={{width: 160, height: 160, borderRadius: 10}} />
     </View>
-    
 );
 
 }
 const styles = StyleSheet.create({
-item: {
-  backgroundColor:'pink',
-  width:90,
-  height: 90, 
-  borderRadius:10,
-  color: 'white',
-  flexDirection: 'row',
-  alignItems: 'center',
-  margin: 1,
+  item: {
+    backgroundColor:'pink',
+    width:160,
+    height: 160, 
+    borderRadius:10,
+    color: 'white',
+    flexDirection: 'row',
+    alignItems: 'center',
+    margin: 1,
 },
 });
 
