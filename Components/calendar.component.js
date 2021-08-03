@@ -1,18 +1,14 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-
 const Calendar = ({name}) => {
-  
   return (
+    <View style={styles.calendarContainer}>
+      <Text style={styles.text}>{name}</Text>
+    </View>
       
-      <View style={styles.calendarContainer}>
-          <Text style={styles.text}>{name}</Text>
-      </View>
-      
-  );
-
-}
+  )};
+  
 const styles = StyleSheet.create({
   calendarContainer: {
     backgroundColor:'#BEF388',

@@ -8,7 +8,7 @@ const EatSeasonally = () => {
       < View style={styles.page}> 
         <HeaderComponent></HeaderComponent>
         <View style={styles.title}>
-            <Text style={styles.text}> Why Eat Seasonally? </Text>
+          <Text style={styles.text}> Why Eat Seasonally? </Text>
         </View>
       <View style={styles.container}> 
         <Text style={styles.textInfo}>To reduce the energy (and associated CO2 emissions) needed to grow and transport the food we eat.</Text>

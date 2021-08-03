@@ -7,13 +7,11 @@ const HeaderComponent = ( ) => {
   return (
     <View>
       <View style = {styles.logoContainer}>
-      <Image source = {require('../pics/LOGO.png')} style={styles.image}></Image>
+        <Image source = {require('../pics/LOGO.png')} style={styles.image}></Image>
       </View>
     </View>
-   
-    )};
-    
-//insert logo here as well
+  )};
+
 const styles = StyleSheet.create({
   image: {
     width: 80,

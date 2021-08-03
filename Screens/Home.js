@@ -1,11 +1,11 @@
 
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, ImageBackground } from 'react-native';
 
 
 const Home = ({ navigation }) => {
   return (
-   
+
     <View style={styles.container}>  
     <Image source = {require('../pics/LOGO.png')} style={styles.image}></Image> 
     <View style={styles.menu}>
@@ -16,13 +16,7 @@ const Home = ({ navigation }) => {
         <Text style={styles.text}>Calendar</Text>
       </TouchableOpacity>
       </View>
-      <View style={styles.homepageMenu}>
-      <TouchableOpacity onPress={() => {
-          navigation.navigate('Details')
-      }}>
-        <Text style={styles.text}>Details</Text>
-      </TouchableOpacity>
-      </View>
+    
       <View style={styles.homepageMenu}>
       <TouchableOpacity onPress={() => {
           navigation.navigate('FruitVeggieMonth')
@@ -39,6 +33,7 @@ const Home = ({ navigation }) => {
       </View>
     </View>
     </View>
+    
   )
 };
 
@@ -51,8 +46,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 76,
-   marginVertical: 10,
-   borderRadius: 7,
+    marginVertical: 10,
+    borderRadius: 7,
   },
   menu: {
     marginTop: 156,
@@ -67,7 +62,6 @@ const styles = StyleSheet.create({
     marginLeft: 150,
     marginTop: 100,
     paddingBottom: 20,
-    
  },
  container: {
     flex:1, 

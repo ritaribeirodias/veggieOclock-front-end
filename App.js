@@ -5,7 +5,7 @@ import CalendarScreen from './Screens/calendar';
 import EatSeasonally from './Screens/eatSeasonally';
 import FruitVeggieMonth from './Screens/fruitVeggieMonth';
 import Home from './Screens/Home'
-import Details from './Screens/details';
+
 
 const Stack = createStackNavigator();
 
@@ -20,7 +20,6 @@ export default function App() {
        <Stack.Screen name ="CalendarScreen" component={CalendarScreen} ></Stack.Screen>
        <Stack.Screen name ="FruitVeggieMonth" component={FruitVeggieMonth}></Stack.Screen>
        <Stack.Screen name ="EatSeasonally" component={EatSeasonally}></Stack.Screen>
-       <Stack.Screen name ="Details" component={Details}></Stack.Screen> 
      </Stack.Navigator>
     </NavigationContainer>
   );

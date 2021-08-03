@@ -21,7 +21,6 @@ const FruitVeggieMonth = (props) => {
        <View> 
           <Image source={require('../pics/peas.jpeg')} style={styles.image}></Image>
        </View> 
-      
        <View style={styles.mainItemComponent}> 
         <Text style={styles.subTitle}> Peas </Text>
         <Text> Place peas in a perforated plastic bag in the vegetable crisper section of the refrigerator to keep them moist. Peas will keep in the refrigerator for 5 to 7 days. Peas that can't be used in a week should be frozen </Text>
@@ -49,35 +48,35 @@ const FruitVeggieMonth = (props) => {
       fontSize: 20,
     },
     mainItemComponent: {
-        backgroundColor: '#F1EFEF',
-        borderRadius: 10,
-        width:300,
-        height: 140, 
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginLeft: 60, 
-        marginTop: 20,
-        paddingHorizontal:10,
-        
-      },
-      image: {
-        width:160,
-        height: 160, 
-        borderRadius:10,
-        flexDirection: 'row',
-        alignItems: 'center',
-        margin: 1,
-        marginLeft: 130,
-        marginTop: 30,
-      },
-      background: {
-        backgroundColor: 'white',
-        flex: 1,
-      },
-      subTitle: {
-        paddingBottom: 5, 
-        fontSize: 16,
-        fontWeight: 'bold',
-      }
+      backgroundColor: '#F1EFEF',
+      borderRadius: 10,
+      width:300,
+      height: 140, 
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginLeft: 60, 
+      marginTop: 20,
+      paddingHorizontal:10,
+    },
+    image: {
+      width:160,
+      height: 160, 
+      borderRadius:10,
+      flexDirection: 'row',
+      alignItems: 'center',
+      margin: 1,
+      marginLeft: 130,
+      marginTop: 30,
+    },
+    background: {
+      backgroundColor: 'white',
+      flex: 1,
+    },
+    subTitle: {
+      paddingBottom: 5, 
+      fontSize: 16,
+      fontWeight: 'bold',
+    }
   });
+  
 export default FruitVeggieMonth;

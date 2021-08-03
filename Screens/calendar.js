@@ -1,13 +1,39 @@
 import React from 'react';
-import { StyleSheet, View, SafeAreaView, FlatList } from 'react-native';
+import { StyleSheet, View, SafeAreaView, FlatList, Text } from 'react-native';
 import HeaderComponent from '../Components/header.component';
-import MainItem from '../Components/mainItem.component';
 import Calendar from '../Components/calendar.component';
 import Item from '../Components/item.component';
 import { useState, useEffect, useCallback } from 'react';
+import MainItem from '../Components/mainItem.component';
 
-const months = [
-    {month: 'JAN', id: 1},
+
+
+const CalendarScreen = ({item, navigation}) => {
+
+  const [data, setData] = useState([]);
+  const [selected, setSelected] = useState(null);
+
+  const baseURL = 'http://192.168.1.105:3001/items';
+  
+  const handleSelect = (item) => {
+    setSelected(item);
+  };
+
+  const fetchItems = useCallback (async () => {
+    const res = await fetch(baseURL);
+    if(res.ok) { 
+      const result = await res.json();
+      setData(result);
+    };
+  }, []);
+
+  useEffect(() => {
+    fetchItems();
+  }, []);
+  
+
+  const months = [
+    {month: 'JAN', id: 1}, 
     {month: 'FEB', id: 2},
     {month: 'MAR', id: 3},
     {month: 'APR', id: 4},
@@ -21,66 +47,55 @@ const months = [
     {month: 'DEC', id: 12},
   ];
 
-const CalendarScreen = (props) => {
-
-  const [data, setData] = useState([]);
-  
-  const baseURL = 'http://192.168.1.105:3001/items';
-  
-  const fetchItems = useCallback (async () => {
-    const res = await fetch(baseURL);
-    if(res.ok) { 
-    const result = await res.json();
-    //console.log(items, 'items')
-    setData(result);
-    }
-  }, [])
-
-  useEffect(() => {
-    fetchItems();
-  }, []);
-
-  
-
-   
-
   return (
     <SafeAreaView>
-    <View> 
+    <View style={{backgroundColor: 'white'}}> 
       <HeaderComponent></HeaderComponent>
-      <View style = {styles.list}>
       <FlatList
-        data= {data}
+        style = {styles.margin}
         horizontal = {false}
-        keyExtractor = {item => {item._id}}
-        renderItem = {({item}) => {
-          return <Item item = {item} />
+        numColumns = {6}
+        data= {months}
+        //keyExtractor = {el => {el.month}}
+        renderItem = {(el) => {
+          return <Calendar name = {el.item.month} />
         }}>
       </FlatList>
-      <MainItem style = {styles.mainItem}></MainItem>
-      </View>
+      <View style = {styles.list}>
+        <FlatList
+          data= {data}
+          horizontal = {true}
+          keyExtractor = {item => {item._id}}
+          renderItem = {({item}) => {
+            return <Item item = {item} handleSelect={handleSelect} />
+          }}>
+        </FlatList>
+     </View>
+     <View>
+       {selected ? <MainItem selectedItem = {selected}></MainItem> : <Text></Text>}
+     </View>
     </View>
     </SafeAreaView>
-  )
-}
+  )};
 
 const styles = StyleSheet.create({
-    content: {
-      flex:1,
-      flexDirection:'row',
-    },
-    margin: {
-      marginLeft: 90,
-      marginVertical: 10,
-    },
-    mainItem: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-    }, 
-    list: {
-      alignItems: 'center', 
-    }
+  content: {
+    flex:1,
+    flexDirection:'row',
+  },
+  margin: {
+    marginLeft: 90,
+    marginVertical: 10,
+  },
+  mainItem: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  }, 
+  list: {
+    alignItems: 'center', 
+    margin: 5, 
+  }, 
   });
 
   export default CalendarScreen;
