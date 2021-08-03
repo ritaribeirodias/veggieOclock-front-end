@@ -7,11 +7,7 @@ const MainItem = ({selectedItem, selected}) => {
   return (
     <ScrollView>
     <View >
-      <View style={styles.title}>
-        <Text style={{color: 'white', fontWeight: 'bold'}}>{selectedItem.name}</Text>
-      </View>
-      <View>
-      <FlatList
+    <FlatList
         style = {styles.margin}
         horizontal = {false}
         numColumns = {6}
@@ -22,7 +18,10 @@ const MainItem = ({selectedItem, selected}) => {
           }
         }>
       </FlatList> 
+      <View style={styles.title}>
+        <Text style={{color: 'white', fontWeight: 'bold'}}>{selectedItem.name}</Text>
       </View>
+      
       <View style={styles.photoBox}>
         <Image source={{uri: selectedItem.image}} style={{width: 200, height: 200, borderRadius: 10}}></Image>
       </View>
@@ -68,7 +67,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginLeft: 165,
     borderRadius: 10,
-  }
+    marginBottom: 10, 
+  }, margin: {
+    marginLeft: 90,
+    marginVertical: 10,
+  },
 });
 
 export default MainItem;
