@@ -1,20 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-
-const Calendar = ({name}) => {
-  return (
-    <View style={styles.calendarContainer}>
-      <Text style={styles.text}>{name}</Text>
-    </View>
-      
-  )};
-  
+const Calendar = ({ name, element }) => {
+  return element.item.inSeason ? (<View style={[{ backgroundColor: 'black' } , styles.calendarContainer]}><Text style={styles.text}>{name}</Text></View>) : (<View style={[{ backgroundColor: 'pink' }, styles.calendarContainer]}><Text style={styles.text}>{name}</Text></View>)
+};
 const styles = StyleSheet.create({
   calendarContainer: {
-    backgroundColor:'#BEF388',
-    width:40,
-    height: 30, 
-    borderRadius:5,
+    width: 40,
+    height: 30,
+    borderRadius: 5,
     color: 'white',
     flexDirection: 'row',
     alignItems: 'center',
@@ -22,15 +15,33 @@ const styles = StyleSheet.create({
     margin: 1,
   },
   text: {
-    color: 'white',
+    color: 'black',
     fontWeight: 'bold',
   },
   content: {
-    flex:1,
-    flexDirection:'row',
-    alignItems:'center',
-    justifyContent:'center',
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 });
-
 export default Calendar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

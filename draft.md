@@ -204,11 +204,3 @@
 
 
 
-<!-- <View>
-       {selectedItem.months.inSeason ? <Calendar selectedItem = {selected} style={{backgroundColor: '#2B8E35'}}>{selectedItem.months.month}</Calendar> : <Calendar selectedItem = {selected} style={{backgroundColor: '#F3EEEE'}}>{selected.months.month}</Calendar>}
-     </View> -->
-
-     <View>
-      
-       {selectedItem.months.inSeason ? <Calendar selectedItem = {selected} style={{backgroundColor: '#2B8E35'}}>{selectedItem.months.month}</Calendar> : <Calendar selectedItem = {selected} style={{backgroundColor: '#F3EEEE'}}>{selected.months.month}</Calendar>}
-     </View>

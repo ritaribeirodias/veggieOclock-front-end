@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Image, TouchableOpacity, Text } from 'react-native';
 
 const Item = ({item, handleSelect}) => {
-  console.log(item)
+  
   return ( 
     <View style={styles.item}> 
       <TouchableOpacity onPress={() => { handleSelect(item)}}>
