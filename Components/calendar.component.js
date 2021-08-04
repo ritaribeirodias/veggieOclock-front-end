@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+
 const Calendar = ({ name, element }) => {
   return element.item.inSeason ? (<View style={[{ backgroundColor: '#73BE28' } , styles.calendarContainer]}><Text style={styles.text}>{name}</Text></View>) : (<View style={[{ backgroundColor: '#BEF388' }, styles.calendarContainer]}><Text style={styles.text}>{name}</Text></View>)
 };

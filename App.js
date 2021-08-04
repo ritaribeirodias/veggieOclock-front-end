@@ -16,7 +16,7 @@ export default function App() {
   return (
     <NavigationContainer>
      <Stack.Navigator>
-       <Stack.Screen name ="Home" component={Home}></Stack.Screen>
+       <Stack.Screen name ="Home" component={Home} ></Stack.Screen>
        <Stack.Screen name ="CalendarScreen" component={CalendarScreen} ></Stack.Screen>
        <Stack.Screen name ="FruitVeggieMonth" component={FruitVeggieMonth}></Stack.Screen>
        <Stack.Screen name ="EatSeasonally" component={EatSeasonally}></Stack.Screen>

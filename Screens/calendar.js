@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, SafeAreaView, FlatList, Text } from 'react-native';
 import HeaderComponent from '../Components/header.component';
-import Calendar from '../Components/calendar.component';
 import Item from '../Components/item.component';
 import { useState, useEffect, useCallback } from 'react';
 import MainItem from '../Components/mainItem.component';
