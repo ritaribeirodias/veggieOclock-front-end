@@ -18,7 +18,7 @@ Veggie O'Clock is an app that tells you which fruits or vegetables are in season
  5. Open the front end and run `npm install`
  6. Install Expo Go on your mobile phone
  7. Run `expo start` from your terminal
- 8. The browser should pop up a window with a QR code, simply open your camera on your phone and scan the QR code, you will see the product on your phone
+ 8. The browser should pop up a window with a QR code, simply open your camera on your phone and scan the QR code, you will see the product on your phone.
 
 **Tech Stack**
 
