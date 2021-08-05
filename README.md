@@ -6,7 +6,7 @@ Veggie O'Clock is an app that tells you which fruits or vegetables are in season
 
 
 
-![alt text](../pics/VeggieOclockPres.jpg)
+![alt text](VeggieOclockPres.jpg)
 
 
 **Getting Started:**
